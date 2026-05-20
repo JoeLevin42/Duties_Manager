@@ -2,7 +2,7 @@
 This is data 
 """
 
-data = []
+data = [{'id': 1234, 'name': 'dan', 'duties': []}]
 
 """
 Solider example:

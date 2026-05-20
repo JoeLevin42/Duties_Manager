@@ -32,7 +32,8 @@ def is_valid_name(name: str) -> bool:
 
 def solider_has_duty(soldier: dict ,duty_name: str) -> bool:
 
-    if duty_name in soldier["duties"]:
+    duties_names = [duty["name"] for duty in soldier["duties"]]
+    if duty_name in duties_names:
         return True
     return False
 
@@ -45,10 +46,10 @@ def is_valid_day(day: str) -> bool:
     else:
         return False
 
-def is_id_exist(soldier_id: int) -> bool:
+def is_id_exist(soldier_id: int,my_data: list) -> bool:
     
-    for sid in data.data:
+    for sid in my_data:
         if sid["id"] == soldier_id:
             return True
         return False
-    pass    
+   
