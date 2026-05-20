@@ -1,27 +1,54 @@
 """
 This is conatins utils funcitons to support the program
 """
+import data
 
-def find_solider_by_id(solider_id: int) -> dict:
 
-    pass
+def find_solider_by_id(solider_id: int) -> dict | None:
+
+    for index , d in enumerate(data.data):
+        if d["id"] == solider_id:
+            return data.data[index]
 
 def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
 
-    pass
+    for d in duties:
+        if d.get("name") == duty_name:
+            return d
 
 def is_valid_status(status: str) -> bool:
 
-    pass
+    STATUS_LIST = ["pending" ,"completed", "missed"]
+    if status in STATUS_LIST:
+        return True
+    return False
 
 def is_valid_name(name: str) -> bool:
+    
+    if len(name.strip()) < 1:
+        return False
+    return True
+        
 
-    pass
+def solider_has_duty(soldier: dict ,duty_name: str) -> bool:
 
-def solider_has_duty(solider: dict ,duty_name: str) -> bool:
+    if duty_name in soldier["duties"]:
+        return True
+    return False
 
-    pass
 
 def is_valid_day(day: str) -> bool:
 
-    pass
+    DAYS = ["sunday" ,"monday" ,"tuseday" ,"wednesday" ,"thursday"]
+    if day in DAYS:
+        return True
+    else:
+        return False
+
+def is_id_exist(soldier_id: int) -> bool:
+    
+    for sid in data.data:
+        if sid["id"] == soldier_id:
+            return True
+        return False
+    pass    

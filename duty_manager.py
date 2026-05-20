@@ -2,6 +2,8 @@
 This functions is in charge for
 the duty manager 
 """
+import data
+import utils
 
 def add_duty_to_solider(solider: int ,duty_name: str ,day: str)-> None : 
 
