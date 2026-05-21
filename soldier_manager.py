@@ -18,7 +18,7 @@ def add_soldier(soldier_id: int , name: str,my_data=data.data) -> None:
         raise ValueError("The name for the soldier is Invalid")
 
 
-def remove_soldier(soldier_id: int, my_data) -> None:
+def remove_soldier(soldier_id: int, my_data=data.data) -> None:
     
     if not utils.is_id_exist():
         raise KeyError("The soldier ID not in the system!")
@@ -29,9 +29,9 @@ def remove_soldier(soldier_id: int, my_data) -> None:
                 break
 
     
-def get_all_soldiers(my_data: list)-> list:
+def get_all_soldiers(my_data: list =data.data) -> list:
 
-    return data.data
+    return my_data
 
 if __name__ == "__main__":
     pass

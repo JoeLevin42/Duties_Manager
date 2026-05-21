@@ -22,12 +22,30 @@ def add_duty_to_solider(soldier_id: int ,duty_name: str ,day: str)-> None :
     soldier_dict["duties"].append(duty_dict)    
 
 def update_duty_status(solider_id: int, duty_name: int ,new_status: str) -> None:
- 
-    pass
+    
+    soldier_dict = utils.find_solider_by_id(solider_id)
+    if soldier_dict == None:
+        raise KeyError("The id not in the system!")
+    
+    soldier_duty_dict = utils.find_duty_by_name(soldier_dict["duties"] ,duty_name)
+    if soldier_duty_dict == None:
+        raise KeyError("NO duty in this name to the soldier")
+    
+    if utils.is_valid_status(new_status):
+        soldier_duty_dict["status"] = new_status
+    else:
+        raise ValueError
+        
+    
 
 def get_soliders_duties(solider_id: int) -> list:
-
-    pass
+    
+    soldier_dict = utils.find_solider_by_id(solider_id)
+    if soldier_dict == None:
+        raise KeyError("NO id in the system")
+    
+    return soldier_dict["duties"] 
+    
 
 if __name__ == "__main__":
 
