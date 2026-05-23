@@ -4,6 +4,7 @@ This is data
 
 data = [{'id': 1234, 'name': 'dan', 'duties': []}]
 
+
 """
 Solider example:
 {

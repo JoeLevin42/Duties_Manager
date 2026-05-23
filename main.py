@@ -8,7 +8,7 @@ def shown_menu():
     print("Hello welcome tho this amazing system!\n"\
           "Please Choose on of the option\n" \
           "1. Add soldier\n" \
-          "2. Remove soldier\n" \
+          "2. Remove soldiers\n" \
           "3. View soldier\n" \
           "4. Add duty to soldier\n" \
           "5. Update Duty status to soldier\n" \
@@ -38,6 +38,8 @@ def handle_add_solider():
     
     except utils.SoldierIdNotExist:
         print("The soldier is already exist!")
+    except ValueError:
+        print("Please enter valid ID")
     
 
 def handle_remove_solider():
@@ -50,7 +52,8 @@ def handle_remove_solider():
         print("The soldier removed!")
     except utils.SoldierIdNotExist:
             print("The soldier ID not in the system!")
-
+    except ValueError:
+        print("Please enter valid ID")
 
 
 def handle_view_solider():
@@ -93,6 +96,8 @@ def handle_update_duty():
         print("Soldier ID not in the system")
     except utils.NotValidStatus:
         print("Invalid status choose  - completed or missed or pending")
+    except ValueError:
+        print("Please enter valid ID")
 
 
 def handle_view_solider_duties():
@@ -104,7 +109,8 @@ def handle_view_solider_duties():
         print(duty_manager.get_soliders_duties(get_soldier_id))
     except utils.NotValidStatus:
         print("NO ID in the system")
-
+    except ValueError:
+        print("Please enter valid ID")
 
 def main():
 
@@ -132,8 +138,8 @@ def main():
                 pass
             
             
-
-main()
+if __name__ == "__main__":
+    main()
 
 
 
