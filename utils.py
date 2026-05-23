@@ -3,11 +3,25 @@ This is conatins utils funcitons to support the program
 """
 import data
 
+class SoldierIdNotExist(Exception):
+    pass
+
+class NameError(Exception):
+    pass
+
+class DutyNotFound(Exception):
+    pass
+
+class NotValidStatus(Exception):
+    pass
+
+class DutyAlreadyExist(Exception):
+    pass
 
 def find_solider_by_id(solider_id: int) -> dict | None:
 
     for index , d in enumerate(data.data):
-        if d["id"] == solider_id:
+        if d["id"] == int(solider_id):
             return data.data[index]
 
 def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
@@ -49,7 +63,7 @@ def is_valid_day(day: str) -> bool:
 def is_id_exist(soldier_id: int,my_data: list) -> bool:
     
     for sid in my_data:
-        if sid["id"] == soldier_id:
+        if sid.get("id") == int(soldier_id):
             return True
         return False
    

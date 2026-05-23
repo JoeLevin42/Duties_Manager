@@ -94,7 +94,7 @@ def get_duties_solider(id:int):
     pass
 
 def search_solider(id:int):
-    """Search the solider by the if
+    """Search the solider by the id
 
     This function is searching if the solifer is exist 
     in the data base 
