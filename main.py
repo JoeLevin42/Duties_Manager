@@ -13,12 +13,13 @@ def shown_menu():
           "4. Add duty to soldier\n" \
           "5. Update Duty status to soldier\n" \
           "6. See the soldier duties\n"
+          "7. to exit"
           )
     
 
 def get_user_choice():
     user_choice = input("Please enter your choice")
-    if len(user_choice) == 1 and int(user_choice) in range(1,7):
+    if len(user_choice) == 1 and int(user_choice) in range(1,8):
         return user_choice
     else:
         print("Not valid input")
@@ -26,6 +27,9 @@ def get_user_choice():
     pass
 
 def handle_add_solider():
+    """
+    This function handels the adding soldier to the system with try/except
+    """
     get_soldier_id = input("Enter soldier ID:  ")
     get_soldier_name = input("Enter soldier name:  ")
     try:
@@ -37,7 +41,9 @@ def handle_add_solider():
     
 
 def handle_remove_solider():
-
+    """
+    This function is hadels the removing soldier from the system with try/except
+    """
     get_soldier_id = input("Enter soldier ID:  ")
     try:
         soldier_manager.remove_soldier(get_soldier_id)
@@ -48,7 +54,9 @@ def handle_remove_solider():
 
 
 def handle_view_solider():
-
+    """
+    This fuction is handels the viewing of all the soldiers with try/except
+    """
     try:
         list_of_all = soldier_manager.get_all_soldiers()
         print(list_of_all)
@@ -56,7 +64,9 @@ def handle_view_solider():
         print("Something went wrong")
 
 def handle_add_duty():
-    
+    """
+    This function is handels the adding duty to soldier with try/except
+    """
     get_soldier_id = input("Enetr ID")
     get_duty_name = input("Please Enter duty name")
     get_day = input("Please Input Day")
@@ -71,7 +81,9 @@ def handle_add_duty():
         print("Day Invalid choose day = sunday - thursday")
 
 def handle_update_duty():
-
+    """
+    This fucntion is handels the updating duty to a soldier with try/except
+    """
     get_soldier_id = input("Enter soldier ID  :")
     get_duty_name = input("enter duty name  :")
     get_duty_new_status = input("PLease enter new status")
@@ -84,7 +96,9 @@ def handle_update_duty():
 
 
 def handle_view_solider_duties():
-
+    """
+    This function handels the viewing duties of the soldier with try/except
+    """
     get_soldier_id = input("Enter soldier ID    :")
     try:
         print(duty_manager.get_soliders_duties(get_soldier_id))
@@ -112,7 +126,12 @@ def main():
                 handle_update_duty()
             case "6":
                 handle_view_solider_duties()
-
+            case "7":
+                break
+            case _:
+                pass
+            
+            
 
 main()
 

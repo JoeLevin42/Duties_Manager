@@ -64,7 +64,17 @@ def update_duty_status(solider_id: int, duty_name: int ,new_status: str) -> None
     
 
 def get_soliders_duties(solider_id: int) -> list:
-    
+    """Returns the all duties to one soldier
+
+    This function going to the data base and taking the list of the duties
+    of the soldier by id , if id not exist rasing a error
+
+    Args:
+        soldier_id = the soldier id
+
+    Returns:
+        list of the duties of this soldier    
+    """
     soldier_dict = utils.find_solider_by_id(solider_id)
     if soldier_dict == None:
         raise utils.SoldierIdNotExist("NO id in the system")
@@ -72,8 +82,6 @@ def get_soliders_duties(solider_id: int) -> list:
     return soldier_dict["duties"] 
     
 
-if __name__ == "__main__":
 
-    add_duty_to_solider(1234, "guard duty", "sunday")
-    add_duty_to_solider(1234, "guard duty", "sunday")
-    print(data.data)
+
+ 
