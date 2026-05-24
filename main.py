@@ -4,6 +4,7 @@ The main function that handles all
 import utils
 import soldier_manager
 import duty_manager
+
 def shown_menu():
     print("Hello welcome tho this amazing system!\n"\
           "Please Choose on of the option\n" \

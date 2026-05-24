@@ -39,7 +39,7 @@ def is_valid_status(status: str) -> bool:
 
 def is_valid_name(name: str) -> bool:
     
-    if len(name.strip()) < 1:
+    if len(name.strip()) < 1 and name.isalpha():
         return False
     return True
         
