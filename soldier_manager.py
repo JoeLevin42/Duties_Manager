@@ -48,7 +48,7 @@ def remove_soldier(soldier_id: int, my_data=data.data) -> None:
         raise utils.SoldierIdNotExist("The soldier ID not in the system!")
     else:
         for index , d in enumerate(data.data):
-            if d["id"] == soldier_id:
+            if d["id"] == int(soldier_id):
                 del my_data[index]
                 break
 

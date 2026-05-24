@@ -74,6 +74,7 @@ def handle_add_duty():
     get_duty_name = input("Please Enter duty name")
     get_day = input("Please Input Day")
     try:
+
         duty_manager.add_duty_to_solider(get_soldier_id , get_duty_name, get_day)
         print("Duty Added!")
     except utils.SoldierIdNotExist:

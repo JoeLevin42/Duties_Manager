@@ -12,7 +12,7 @@ def add_duty_to_solider(soldier_id: int ,duty_name: str ,day: str)-> None :
     the duty name and day have to be valid or will cause error
 
     Args:
-        soldier_id = the soldier id (hvae to be uniq)
+        soldier_id = the soldier id (have to be uniq)
         duty_name = the duty name if not exist already to this soldier
         day = day between sunday to thursday else will cause error
 
@@ -20,7 +20,7 @@ def add_duty_to_solider(soldier_id: int ,duty_name: str ,day: str)-> None :
         None but if worked updating the data base by param    
     """
     soldier_dict = utils.find_solider_by_id(soldier_id)
-    if soldier_id == None:
+    if soldier_dict == None:
         raise utils.SoldierIdNotExist("The soldier id doesnt exist in the system!")
     
     if utils.solider_has_duty(soldier_dict, duty_name):
@@ -46,8 +46,7 @@ def update_duty_status(solider_id: int, duty_name: int ,new_status: str) -> None
     Returns:
         None but uptdating the status in the data base throght the soldier dict
     
-    """
-    
+    """    
     soldier_dict = utils.find_solider_by_id(solider_id)
     if soldier_dict == None:
         raise utils.SoldierIdNotExist("The id not in the system!")
@@ -60,8 +59,7 @@ def update_duty_status(solider_id: int, duty_name: int ,new_status: str) -> None
         soldier_duty_dict["status"] = new_status
     else:
         raise utils.NotValidStatus
-        
-    
+            
 
 def get_soliders_duties(solider_id: int) -> list:
     """Returns the all duties to one soldier
