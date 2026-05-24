@@ -7,8 +7,9 @@ import soldier_manager
 import duty_manager
 
 def shown_menu():
-    print("Hello welcome tho this amazing system!\n"\
-          "Please Choose on of the option\n" \
+    print("=======================================\n"
+          "Hello welcome tho this amazing system!\n"\
+          "Please Choose one of the option\n" \
           "1. Add soldier\n" \
           "2. Remove soldiers\n" \
           "3. View soldier\n" \
@@ -90,7 +91,7 @@ def handle_add_duty():
         print("Day Invalid choose day = sunday - thursday")
     except ValueError:
         print("Invalid ID or you typed not right format")
-        
+
 def handle_update_duty():
     """
     This fucntion is handels the updating duty to a soldier with try/except

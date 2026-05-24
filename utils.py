@@ -19,7 +19,7 @@ class DutyAlreadyExist(Exception):
     pass
 
 def find_solider_by_id(solider_id: int) -> dict | None:
-    if  solider_id.isalpha():
+    if solider_id.isalpha():
         return "Error"
         
     for index , d in enumerate(data.data):

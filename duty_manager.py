@@ -78,6 +78,8 @@ def get_soliders_duties(solider_id: int) -> list:
     soldier_dict = utils.find_solider_by_id(solider_id)
     if soldier_dict == None:
         raise utils.SoldierIdNotExist("NO id in the system")
+    elif type(soldier_dict) != dict:
+        raise ValueError
     
     return soldier_dict["duties"] 
     
