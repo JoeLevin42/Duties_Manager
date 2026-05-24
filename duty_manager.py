@@ -20,6 +20,8 @@ def add_duty_to_solider(soldier_id: int ,duty_name: str ,day: str)-> None :
         None but if worked updating the data base by param    
     """
     soldier_dict = utils.find_solider_by_id(soldier_id)
+    if soldier_dict == "Error":
+        raise ValueError
     if soldier_dict == None:
         raise utils.SoldierIdNotExist("The soldier id doesnt exist in the system!")
     

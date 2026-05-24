@@ -1,3 +1,4 @@
+#https://github.com/JoeLevin42/Duties_Manager.git
 """
 The main function that handles all
 """
@@ -20,7 +21,10 @@ def shown_menu():
 
 def get_user_choice():
     user_choice = input("Please enter your choice")
-    if len(user_choice) == 1 and int(user_choice) in range(1,8):
+    range_of_option = 8
+    if not user_choice.isnumeric():
+        print("Not valid input")
+    elif len(user_choice) == 1 and int(user_choice) in range(1,range_of_option+1):
         return user_choice
     else:
         print("Not valid input")
@@ -84,7 +88,9 @@ def handle_add_duty():
         print("The duty is already exist for this solider")
     except utils.DutyNotFound:
         print("Day Invalid choose day = sunday - thursday")
-
+    except ValueError:
+        print("Invalid ID or you typed not right format")
+        
 def handle_update_duty():
     """
     This fucntion is handels the updating duty to a soldier with try/except
